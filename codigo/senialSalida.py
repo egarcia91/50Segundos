@@ -10,28 +10,28 @@ def cadenaABinario(str):
     byte_list = []
     for byte in a_byte_array:
         binary_representation = bin(byte)
-        byte_list.append(binary_representation)
+        mensaje = binary_representation[2:]
+        for indice in range(0, len(mensaje)):
+            byte_list.append(mensaje[indice])
     return byte_list
 
 def senialParaDriver(informacion):
     tau = 1/44000
     print("empiezo a mandar el mensaje")
-    for letra in cadenaABinario(informacion):
-        mensaje = letra[2:]
-        for indice in range(0, len(mensaje)):
-            time.sleep(tau)
-            if mensaje[indice] == '1' :
-               # sp10nOff.value = True
-               # sn10nOff.value = False
-                print("70v+")
-            elif mensaje[indice] == '0' :
-                print("70v-")
-               # sp10nOff.value = True
-               # sn10nOff.value = False
-            else :
-               print("nada que transmitir")
-               # sp10nOff.value = False
-               # sn10nOff.value = False
+    for mensaje in cadenaABinario(informacion):
+        time.sleep(tau/2)
+        if mensaje == '1' :
+           # sp10nOff.value = True
+           # sn10nOff.value = False
+            print("70v+")
+        elif mensaje == '0' :
+            print("70v-")
+           # sp10nOff.value = True
+           # sn10nOff.value = False
+        else :
+           print("nada que transmitir")
+           # sp10nOff.value = False
+           # sn10nOff.value = False
     print("termine el mensaje")
     # sp10nOff.value = False
     # sn10nOff.value = False
