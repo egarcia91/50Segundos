@@ -26,8 +26,8 @@ def senialParaDriver(informacion):
             print("70v+")
         elif mensaje == '0' :
             print("70v-")
-           # sp10nOff.value = True
-           # sn10nOff.value = False
+           # sp10nOff.value = False
+           # sn10nOff.value = True
         else :
            print("nada que transmitir")
            # sp10nOff.value = False
