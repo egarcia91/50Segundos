@@ -1,0 +1,7 @@
+(fp_lib_table
+  (lib (name HV7360)(type KiCad)(uri D:/KiCAD/trabajoProfesional/HV7360)(options "")(descr ""))
+  (lib (name footprints)(type KiCad)(uri D:/KiCAD/trabajoProfesional/MS5837-30BA/KiCAD/2020-08-16_19-32-11/footprints.pretty)(options "")(descr ""))
+  (lib (name SC810)(type KiCad)(uri D:/KiCAD/trabajoProfesional/SC810)(options "")(descr ""))
+  (lib (name TS51223)(type KiCad)(uri D:/KiCAD/trabajoProfesional/TS51223)(options "")(descr ""))
+  (lib (name UTR-1440K-TT-R)(type KiCad)(uri D:/KiCAD/trabajoProfesional/UTR-1440K-TT-R)(options "")(descr ""))
+)

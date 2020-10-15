@@ -1,0 +1,8 @@
+(sym_lib_table
+  (lib (name HV7360GA-G)(type Legacy)(uri D:/KiCAD/trabajoProfesional/HV7360/HV7360GA-G.lib)(options "")(descr ""))
+  (lib (name 2020-08-16_19-32-11)(type Legacy)(uri D:/KiCAD/trabajoProfesional/MS5837-30BA/KiCAD/2020-08-16_19-32-11/2020-08-16_19-32-11.lib)(options "")(descr ""))
+  (lib (name SC810ULTRT)(type Legacy)(uri D:/KiCAD/trabajoProfesional/SC810/SC810ULTRT.lib)(options "")(descr ""))
+  (lib (name TS51223-M000WCSR)(type Legacy)(uri D:/KiCAD/trabajoProfesional/TS51223/TS51223-M000WCSR.lib)(options "")(descr ""))
+  (lib (name UTR-1440K-TT-R)(type Legacy)(uri D:/KiCAD/trabajoProfesional/UTR-1440K-TT-R/UTR-1440K-TT-R.lib)(options "")(descr ""))
+  (lib (name Trinket)(type Legacy)(uri D:/KiCAD/trabajoProfesional/TrinketM0/1501.lib)(options "")(descr ""))
+)
