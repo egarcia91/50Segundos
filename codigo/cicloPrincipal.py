@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import time
-from senialSalida import SenialParaDriver
+import senialSalida
 
 delay_prim=0.4 #Este seria el delay de 5s
 delay_critic= 0.6 #Este seria el delay de 25s
@@ -23,5 +23,5 @@ if __name__ == "__main__":
         print(CountCritic)
         
         if CountCritic > 5 :
-            SenialParaDriver("AYUDAAAAAAAAA!!!!!")
+            senialSalida.senialParaDriver('AYUDAAAAAAAAA!!!!!')
         
