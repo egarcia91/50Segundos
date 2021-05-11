@@ -5,12 +5,19 @@
 // https://www.controleverything.com/content/Pressure?sku=MS5837-30BA01_I2CS#tabs-0-product_tabset-2
 
 #include <Wire.h>
-#include <Milibreriams.h>
+// #include <Milibreriams.h>
 // MS5837_30BA01 I2C address is 0x76(108)
 #define Addr 0x76
 
 unsigned long Coff[6], Ti = 0, offi = 0, sensi = 0;
 unsigned int data[3];
+
+int delay_prim=500; //Este seria el delay de 5s
+int delay_critic= 600; //Este seria el delay de 25s
+float prof_critic=1015; //Profundidad critica suponer que son 80cm
+
+float SPr=1;
+int CountCritic=0;
 void setup()
 {
   Calibrar_ms();
@@ -18,6 +25,71 @@ void setup()
 
 void loop() 
 {
+  //float pressure=SaberPresion();
+  //Serial.print(pressure);
+  //Serial.println("mbar");
+
+
+SPr=SaberPresion();
+if(SPr < prof_critic ){
+  CountCritic=0;
+  delay(delay_prim);
+}else{
+  CountCritic+= 1;
+  delay(delay_critic);
+}
+Serial.println(CountCritic);
+
+if(CountCritic > 5) {
+  //senialSalida.senialParaDriver('AYUDAAAAAAAAA!!!!!');
+  Serial.println("AYUDAA!!!!");
+  SenialSalida();
+}
+
+
+Serial.print(SPr);
+Serial.println("mbar");
+}
+
+
+void Calibrar_ms(){
+  // Initialise I2C communication as MASTER
+  Wire.begin();
+  // Initialise Serial Communication, set baud rate = 9600
+  Serial.begin(9600);
+
+  // Read cofficients values stored in EPROM of the device
+  for(int i = 0; i < 6; i++)
+  {
+    // Start I2C Transmission
+    Wire.beginTransmission(Addr);
+    // Select data register
+    Wire.write(0xA2 + (2 * i));
+    // Stop I2C Transmission
+    Wire.endTransmission();
+  
+    // Request 2 bytes of data
+    Wire.requestFrom(Addr, 2);
+      
+    // Read 2 bytes of data
+    // Coff msb, Coff lsb
+    if(Wire.available() == 2)
+    {
+      data[0] = Wire.read();
+      data[1] = Wire.read();
+
+    }  
+      
+    // Convert the data
+    Coff[i] = ((data[0] * 256) + data[1]);
+  }
+  delay(300);
+
+}
+
+
+float SaberPresion(){
+  
   // Start I2C Transmission
   Wire.beginTransmission(Addr);
   // Send reset command 
@@ -137,41 +209,22 @@ void loop()
   Serial.print("Pressure : ");
   Serial.print(pressure);
   Serial.println(" mbar"); 
+  return pressure;
   delay(500); 
-}
-
-
-void Calibrar_ms(){
-// Initialise I2C communication as MASTER
-  Wire.begin();
-  // Initialise Serial Communication, set baud rate = 9600
-  Serial.begin(9600);
-
-  // Read cofficients values stored in EPROM of the device
-  for(int i = 0; i < 6; i++)
-  {
-    // Start I2C Transmission
-    Wire.beginTransmission(Addr);
-    // Select data register
-    Wire.write(0xA2 + (2 * i));
-    // Stop I2C Transmission
-    Wire.endTransmission();
-  
-    // Request 2 bytes of data
-    Wire.requestFrom(Addr, 2);
-      
-    // Read 2 bytes of data
-    // Coff msb, Coff lsb
-    if(Wire.available() == 2)
-    {
-      data[0] = Wire.read();
-      data[1] = Wire.read();
-
-    }  
-      
-    // Convert the data
-    Coff[i] = ((data[0] * 256) + data[1]);
   }
-  delay(300);
 
+void SenialSalida(){
+
+digitalWrite(13, HIGH);   // turn the LED on (HIGH is the voltage level)
+for(int i=0;i<10;i++){
+  Serial.print("--");
+  delay(100);
+}          // wait for a second
+Serial.print("|");
+digitalWrite(13, LOW);  // turn the LED off by making the voltage LOW
+for(int i=0;i<10;i++){
+  Serial.print("__");
+  delay(100);
+}//delay(1000);              // wait for a second
+Serial.print("|");
 }
