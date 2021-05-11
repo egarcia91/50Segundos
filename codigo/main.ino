@@ -8,13 +8,18 @@
 // #include <Milibreriams.h>
 // MS5837_30BA01 I2C address is 0x76(108)
 #define Addr 0x76
+#include <iostream>
+#include <bitset>
+#include <string>
+using namespace std;
 
+#define frecuencia 1
 unsigned long Coff[6], Ti = 0, offi = 0, sensi = 0;
 unsigned int data[3];
 
 int delay_prim=500; //Este seria el delay de 5s
 int delay_critic= 600; //Este seria el delay de 25s
-float prof_critic=1015; //Profundidad critica suponer que son 80cm
+float prof_critic=1005; //Profundidad critica suponer que son 80cm
 
 float SPr=1;
 int CountCritic=0;
@@ -25,30 +30,27 @@ void setup()
 
 void loop() 
 {
-  //float pressure=SaberPresion();
-  //Serial.print(pressure);
-  //Serial.println("mbar");
+  float pressure=SaberPresion();
+  Serial.print(pressure);
+  Serial.println("mbar");
 
-
-SPr=SaberPresion();
-if(SPr < prof_critic ){
-  CountCritic=0;
-  delay(delay_prim);
-}else{
-  CountCritic+= 1;
-  delay(delay_critic);
-}
-Serial.println(CountCritic);
-
-if(CountCritic > 5) {
-  //senialSalida.senialParaDriver('AYUDAAAAAAAAA!!!!!');
-  Serial.println("AYUDAA!!!!");
-  SenialSalida();
-}
-
-
-Serial.print(SPr);
-Serial.println("mbar");
+  SPr=SaberPresion();
+  if(SPr < prof_critic ){
+    CountCritic=0;
+    delay(delay_prim);
+  }else{
+    CountCritic+= 1;
+    delay(delay_critic);
+  }
+  Serial.println(CountCritic);
+  
+  if(CountCritic > 5) {
+    senialParaDriver("AYUDAA!!!!");
+  }
+  
+  
+  Serial.print(SPr);
+  Serial.println("mbar");
 }
 
 
@@ -203,9 +205,9 @@ float SaberPresion(){
   Serial.print("Temperature in Celsius : ");
   Serial.print(ctemp);
   Serial.println(" C");
-  Serial.print("Temperature in Fahrenheit : ");
-  Serial.print(fTemp);
-  Serial.println(" F");
+  //Serial.print("Temperature in Fahrenheit : ");
+  //Serial.print(fTemp);
+  //Serial.println(" F");
   Serial.print("Pressure : ");
   Serial.print(pressure);
   Serial.println(" mbar"); 
@@ -213,18 +215,61 @@ float SaberPresion(){
   delay(500); 
   }
 
-void SenialSalida(){
 
-digitalWrite(13, HIGH);   // turn the LED on (HIGH is the voltage level)
-for(int i=0;i<10;i++){
-  Serial.print("--");
-  delay(100);
-}          // wait for a second
-Serial.print("|");
-digitalWrite(13, LOW);  // turn the LED off by making the voltage LOW
-for(int i=0;i<10;i++){
-  Serial.print("__");
-  delay(100);
-}//delay(1000);              // wait for a second
-Serial.print("|");
+void senialParaDriver(String informacion){
+    String binary=cadenaBinario(informacion);
+    int lengthbin = binary.length();
+    float tau = 1/frecuencia;
+    Serial.print("empiezo a mandar el mensaje");
+    for(int i =0; i<lengthbin;i++){
+        delay(tau*1000/2);
+        char mensaje=binary[i];
+        if(mensaje == '1'){
+           //# sp10nOff.value = True
+           //# sn10nOff.value = False 
+           digitalWrite(3,LOW);
+           digitalWrite(13,HIGH);
+           Serial.println("70v+");
+        }else if( mensaje == '0'){
+           Serial.println("70v-");
+           digitalWrite(13,LOW);
+           digitalWrite(3,HIGH);
+           //# sp10nOff.value = False
+           //# sn10nOff.value = True
+        }else{
+           Serial.println("nada que transmitir");
+           digitalWrite(13,LOW);
+           digitalWrite(3,LOW);
+           //# sp10nOff.value = False
+           //# sn10nOff.value = False
+        }
+    }
+    Serial.print("termine el mensaje");
+    //# sp10nOff.value = False
+
 }
+
+
+
+
+String cadenaBinario(String str){
+  int lenghtString = str.length();
+  String byte_list = "";
+  for(int i=0;i<lenghtString;i++ ){
+      char c=str[i];
+      byte_list += charToBinary(c);
+  }    
+  return byte_list;
+}
+
+String charToBinary(char letra) {
+  String binaryString="";
+  for ( uint8_t bitMask = 128; bitMask != 0; bitMask = bitMask >> 1 ) {
+    if (letra & bitMask ) {
+      binaryString += '1';
+    } else {
+      binaryString += '0';
+    }
+  }
+  return binaryString;
+  }
