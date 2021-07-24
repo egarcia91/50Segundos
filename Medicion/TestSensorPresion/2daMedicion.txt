@@ -1,0 +1,166 @@
+## Esta segunda medicion se realiza con el mismo balde azul y misma configuracion del sensor, con el balde azul completamente lleno 
+Con una profundidad medida con el metro de 
+
+### Profundidad = 18cm de profundidad
+
+
+17:41:28.363 -> Temperature in Celsius : 23.23 C
+17:41:28.363 -> Pressure : 993.80 mbar
+17:41:28.363 ->   iteracion :4
+17:41:28.363 ->   Presion sensada :993.80
+17:41:28.363 -> 4966.20   mbar  - presion promedio
+17:41:29.857 -> Temperature in Celsius : 23.23 C
+17:41:29.857 -> Pressure : 993.80 mbar
+17:41:29.857 ->   iteracion :5
+17:41:29.857 ->   Presion sensada :993.80
+17:41:29.857 -> 5960.00   mbar  - presion promedio
+17:41:31.354 -> Temperature in Celsius : 23.23 C
+17:41:31.354 -> Pressure : 993.80 mbar
+17:41:31.393 ->   iteracion :6
+17:41:31.393 ->   Presion sensada :993.80
+17:41:31.393 -> 6953.80   mbar  - presion promedio
+17:41:32.882 -> Temperature in Celsius : 23.16 C
+17:41:32.882 -> Pressure : 993.90 mbar
+17:41:32.882 ->   iteracion :7
+17:41:32.882 ->   Presion sensada :993.90
+17:41:32.882 -> 7947.70   mbar  - presion promedio
+17:41:34.387 -> Temperature in Celsius : 23.03 C
+17:41:34.387 -> Pressure : 994.00 mbar
+17:41:34.387 ->   iteracion :8
+17:41:34.387 ->   Presion sensada :994.00
+17:41:34.387 -> 8941.70   mbar  - presion promedio
+17:41:35.898 -> Temperature in Celsius : 23.01 C
+17:41:35.898 -> Pressure : 1002.80 mbar
+17:41:35.898 ->   iteracion :9
+17:41:35.898 ->   Presion sensada :1002.80
+17:41:35.898 -> 9944.50   mbar  - presion promedio
+17:41:37.390 -> Temperature in Celsius : 23.01 C
+17:41:37.390 -> Pressure : 999.90 mbar
+17:41:37.390 ->   iteracion :10
+17:41:37.390 ->   Presion sensada :999.90
+17:41:37.390 -> 10944.40   mbar  - presion promedio
+17:41:38.913 -> Temperature in Celsius : 23.00 C
+17:41:38.913 -> Pressure : 1002.90 mbar
+17:41:38.913 ->   iteracion :11
+17:41:38.913 ->   Presion sensada :1002.90
+17:41:38.913 -> 11947.30   mbar  - presion promedio
+17:41:40.408 -> Temperature in Celsius : 23.01 C
+17:41:40.408 -> Pressure : 999.90 mbar
+17:41:40.408 ->   iteracion :12
+17:41:40.408 ->   Presion sensada :999.90
+17:41:40.408 -> 12947.20   mbar  - presion promedio
+17:41:41.901 -> Temperature in Celsius : 23.01 C
+17:41:41.901 -> Pressure : 1005.80 mbar
+17:41:41.901 ->   iteracion :13
+17:41:41.901 ->   Presion sensada :1005.80
+17:41:41.901 -> 13953.00   mbar  - presion promedio
+17:41:43.418 -> Temperature in Celsius : 23.00 C
+17:41:43.418 -> Pressure : 1005.80 mbar
+17:41:43.418 ->   iteracion :14
+17:41:43.418 ->   Presion sensada :1005.80
+17:41:43.418 -> 14958.80   mbar  - presion promedio
+17:41:44.915 -> Temperature in Celsius : 23.00 C
+17:41:44.915 -> Pressure : 1005.80 mbar
+17:41:44.915 ->   iteracion :15
+17:41:44.915 ->   Presion sensada :1005.80
+17:41:44.915 -> 15964.60   mbar  - presion promedio
+17:41:46.409 -> Temperature in Celsius : 23.00 C
+17:41:46.409 -> Pressure : 1005.80 mbar
+17:41:46.409 ->   iteracion :16
+17:41:46.453 ->   Presion sensada :1005.80
+17:41:46.453 -> 16970.40   mbar  - presion promedio
+17:41:47.928 -> Temperature in Celsius : 22.97 C
+17:41:47.928 -> Pressure : 1008.80 mbar
+17:41:47.928 ->   iteracion :17
+17:41:47.928 ->   Presion sensada :1008.80
+17:41:47.928 -> 17979.20   mbar  - presion promedio
+17:41:49.425 -> Temperature in Celsius : 22.97 C
+17:41:49.425 -> Pressure : 1008.80 mbar
+17:41:49.425 ->   iteracion :18
+17:41:49.425 ->   Presion sensada :1008.80
+17:41:49.425 -> 18988.00   mbar  - presion promedio
+17:41:50.939 -> Temperature in Celsius : 22.93 C
+17:41:50.939 -> Pressure : 1008.80 mbar
+17:41:50.939 ->   iteracion :19
+17:41:50.939 ->   Presion sensada :1008.80
+17:41:50.939 -> 19996.80   mbar  - presion promedio
+17:41:52.433 -> Temperature in Celsius : 22.92 C
+17:41:52.433 -> Pressure : 1008.80 mbar
+17:41:52.469 ->   iteracion :20
+17:41:52.469 ->   Presion sensada :1008.80
+17:41:52.469 -> 21005.60   mbar  - presion promedio
+17:41:53.957 -> Temperature in Celsius : 22.93 C
+17:41:53.957 -> Pressure : 1011.70 mbar
+17:41:53.957 ->   iteracion :21
+17:41:53.957 ->   Presion sensada :1011.70
+17:41:53.957 -> 22017.30   mbar  - presion promedio
+17:41:55.476 -> Temperature in Celsius : 22.92 C
+17:41:55.476 -> Pressure : 1011.70 mbar
+17:41:55.476 ->   iteracion :22
+17:41:55.476 ->   Presion sensada :1011.70
+17:41:55.476 -> 23029.00   mbar  - presion promedio
+17:41:56.978 -> Temperature in Celsius : 22.88 C
+17:41:56.978 -> Pressure : 1008.90 mbar
+17:41:56.978 ->   iteracion :23
+17:41:56.978 ->   Presion sensada :1008.90
+17:41:56.978 -> 24037.90   mbar  - presion promedio
+17:41:58.473 -> Temperature in Celsius : 22.87 C
+17:41:58.473 -> Pressure : 1011.80 mbar
+17:41:58.473 ->   iteracion :24
+17:41:58.473 ->   Presion sensada :1011.80
+17:41:58.473 -> 25049.70   mbar  - presion promedio
+17:42:00.002 -> Temperature in Celsius : 22.87 C
+17:42:00.002 -> Pressure : 1014.70 mbar
+17:42:00.002 ->   iteracion :25
+17:42:00.002 ->   Presion sensada :1014.70
+17:42:00.002 -> 26064.40   mbar  - presion promedio
+17:42:01.480 -> Temperature in Celsius : 22.85 C
+17:42:01.480 -> Pressure : 1011.80 mbar
+17:42:01.480 ->   iteracion :26
+17:42:01.480 ->   Presion sensada :1011.80
+17:42:01.480 -> 27076.20   mbar  - presion promedio
+17:42:02.988 -> Temperature in Celsius : 22.82 C
+17:42:02.988 -> Pressure : 1008.90 mbar
+17:42:02.988 ->   iteracion :27
+17:42:02.988 ->   Presion sensada :1008.90
+17:42:02.988 -> 28085.10   mbar  - presion promedio
+17:42:04.506 -> Temperature in Celsius : 22.80 C
+17:42:04.506 -> Pressure : 1006.00 mbar
+17:42:04.506 ->   iteracion :28
+17:42:04.506 ->   Presion sensada :1006.00
+17:42:04.506 -> 29091.10   mbar  - presion promedio
+17:42:05.986 -> Temperature in Celsius : 22.77 C
+17:42:06.028 -> Pressure : 1003.10 mbar
+17:42:06.028 ->   iteracion :29
+17:42:06.028 ->   Presion sensada :1003.10
+17:42:06.028 -> 30094.20   mbar  - presion promedio
+17:42:07.497 -> Temperature in Celsius : 22.72 C
+17:42:07.497 -> Pressure : 1003.20 mbar
+17:42:07.497 ->   iteracion :30
+17:42:07.497 ->   Presion sensada :1003.20
+17:42:07.497 -> 31097.40   mbar  - presion promedio
+17:42:09.013 -> Temperature in Celsius : 22.72 C
+17:42:09.013 -> Pressure : 1000.30 mbar
+17:42:09.013 ->   iteracion :31
+17:42:09.013 ->   Presion sensada :1000.30
+17:42:09.013 -> 32097.70   mbar  - presion promedio
+17:42:10.537 -> Temperature in Celsius : 22.69 C
+17:42:10.537 -> Pressure : 997.40 mbar
+17:42:10.537 ->   iteracion :32
+17:42:10.537 ->   Presion sensada :997.40
+17:42:10.537 -> 33095.10   mbar  - presion promedio
+17:42:12.038 -> Temperature in Celsius : 22.65 C
+17:42:12.038 -> Pressure : 994.50 mbar
+17:42:12.038 ->   iteracion :33
+17:42:12.038 ->   Presion sensada :994.50
+17:42:12.038 -> 34089.60   mbar  - presion promedio
+17:42:13.544 -> Temperature in Celsius : 22.62 C
+17:42:13.544 -> Pressure : 994.50 mbar
+17:42:13.544 ->   iteracion :34
+17:42:13.544 ->   Presion sensada :994.50
+17:42:13.544 -> 35084.10   mbar  - presion promedio
+17:42:15.062 -> Temperature in Celsius : 22.59 C
+17:42:15.062 -> Pressure : 994.50 mbar
+17:42:15.062 ->   iteracion :35
+17:42:15.062 ->   Presion sensada :994.50
+
