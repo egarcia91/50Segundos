@@ -1,8 +1,3 @@
- // Use it any way you want, profit or free, provided it fits in the licenses of its associated works.
-// MS5837_30BA01
-// This code is designed to work with the MS5837_30BA01_I2CS I2C Mini Module available from ControlEverything.com.
-// https://www.controleverything.com/content/Pressure?sku=MS5837-30BA01_I2CS#tabs-0-product_tabset-2
-
 #include <Wire.h>
 // #include <Milibreriams.h>
 // MS5837_30BA01 I2C address is 0x76(108)
@@ -34,10 +29,6 @@ void setup(){
 
 
 void loop() {
-  //float pressure = saberPresion();
-  //Serial.print(pressure);
-  //Serial.println("mbar");
-
   
   if(presionProm ==0){
     float presion;
@@ -48,7 +39,6 @@ void loop() {
         presionProm+=presion;  
       }else
         presionProm+=1000;
-
       Serial.print("  iteracion :");
       Serial.println(k);      
       Serial.print("  Presion sensada :");
@@ -64,29 +54,35 @@ void loop() {
     Serial.println("");
     Serial.println("");
     delayMicroseconds(10);
-
   }
-  
-
-  for(int i = 0; i < 800; i++){
-    digitalWrite(3, HIGH);   // turn the LED on (HIGH is the voltage level)
-    digitalWrite(4, LOW);   // turn the LED on (HIGH is the voltage level)
-    
-    delayMicroseconds(10);              // wait for a second
-    digitalWrite(3, LOW);    // turn the LED off by making the voltage LOW
-    digitalWrite(4, HIGH);    // turn the LED off by making the voltage LOW
-    
-    delayMicroseconds(10);
-  }
-  digitalWrite(3, LOW);    // turn the LED off by making the voltage LOW
-  digitalWrite(4, LOW);    // turn the LED off by making the voltage LOW
-  
-  
+   
   presionSensada = saberPresion();
 
-  if( presionSensada > presionCritica ){ 
-    for(int j = 0; j < 300; j++){
-      for(int i = 0; i < 800; i++){
+
+  if( presionSensada < presionCritica ){
+    alertaEstadoCritico = 0;
+    delay(delayTodoOK);
+  } else {
+    alertaEstadoCritico += 1;
+    delay(delayEstadoCritico);
+  }
+  
+  
+  Serial.println(alertaEstadoCritico);
+  
+  if(alertaEstadoCritico > limiteAlertasCriticas){
+    Serial.println("Entrando en la senal de salida");
+    senalSencilla(15);
+    Serial.println("Termina la senal de salida");
+  }  
+  Serial.print(presionSensada);
+  Serial.println("mbar  - presion sensada");
+  
+}
+
+void senalSencilla(int CantCiclos){
+  for(int j = 0; j < CantCiclos; j++){
+      for(int i = 0; i < 300; i++){
         digitalWrite(3, HIGH);   // turn the LED on (HIGH is the voltage level)
         digitalWrite(4, LOW);   // turn the LED on (HIGH is the voltage level)
         
@@ -99,13 +95,8 @@ void loop() {
     
     digitalWrite(3, LOW);    // turn the LED off by making the voltage LOW
     digitalWrite(4, LOW);    // turn the LED off by making the voltage LOW
-  
-    delayMicroseconds(30);
-    }
+    delayMicroseconds(20);
   }
-  Serial.print(presionSensada);
-  Serial.println("mbar  - presion sensada");
-  
 }
 
 void calibrarSensorPresion(){
